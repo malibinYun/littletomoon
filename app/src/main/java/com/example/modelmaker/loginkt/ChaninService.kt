@@ -20,5 +20,4 @@ interface ChaninService {
     fun signinRequest(@Field("email") id: String,
                     @Field("password") password: String): Call<SigninResponseData>
 
-
 }
