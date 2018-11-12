@@ -15,8 +15,21 @@ object SharedPreferenceController{
     }
 
     fun getCheckStayLogin(ctx: Context): Boolean {
-        val preferences: SharedPreferences = ctx.getSharedPreferences(IS_STAY_LOGIN,Context.MODE_PRIVATE)
-        return preferences.getBoolean(IS_STAY_LOGIN,false)
+        val preference: SharedPreferences = ctx.getSharedPreferences(IS_STAY_LOGIN,Context.MODE_PRIVATE)
+        return preference.getBoolean(IS_STAY_LOGIN,false)
+    }
+
+    //유저 토큰 데이터
+    fun setUserToken(ctx: Context, inputUserId : String, inputToken : String){
+        val preference: SharedPreferences = ctx.getSharedPreferences(inputUserId,Context.MODE_PRIVATE)
+        val editor : SharedPreferences.Editor = preference.edit()
+        editor.putString(inputUserId,inputToken)
+        editor.commit()
+    }
+
+    fun getUserToken(ctx: Context, inputUserId: String): String{
+        val preference: SharedPreferences = ctx.getSharedPreferences(inputUserId,Context.MODE_PRIVATE)
+        return preference.getString(inputUserId,"nothing")
     }
 
 
