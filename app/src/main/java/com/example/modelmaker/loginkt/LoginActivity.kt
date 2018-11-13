@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
                     if (response.body()?.msg.equals("success")) {
                         SharedPreferenceController.setUserToken(it.context,id,response.body()!!.token!!)
                         Log.v("로그인 토큰 저장 확인","토큰 : "+SharedPreferenceController.getUserToken(it.context,id))
-                        startActivity<MainActivity>("id" to "$id")
+                        startActivity<MainActivity>("id" to id)
                     } else if (response.body()?.msg.equals("fail")) {
                         toast("아이디 또는 비밀번호가 틀렸습니다.")
                     } else {
