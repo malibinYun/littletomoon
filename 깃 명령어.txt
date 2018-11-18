@@ -1,0 +1,9 @@
+git add
+git commit
+git log
+git log --stat
+git diff
+git log -p
+git checkout
+git reset --hard
+git revert
