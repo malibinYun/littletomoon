@@ -6,6 +6,7 @@ import android.util.Log
 import com.example.modelmaker.loginkt.dataClasses.UserInfo
 import com.example.modelmaker.loginkt.dataController.SharedPreferenceController
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,6 +18,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btn_gototest.setOnClickListener {
+            startActivity<testActivity>()
+        }
     }
 
 }
